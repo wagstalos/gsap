@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>GSAP</title>
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 
 <body>
-    <!-- <div class="loading">
-        <div class="spinner"></div>
-    </div> -->
 
     <main>
         <section class="s-others s-main">
@@ -36,7 +38,7 @@
         </section>
 
         <section class="s-others the-end">
-            <h1>The end</h1>
+            <h2 class="halloween">HALLOWEEN</h2>
         </section>
     </main>
 
@@ -96,7 +98,7 @@
 
         //The animation
         gsap.to('.the-end', {
-            scale: 2.5, 
+            scale: 2.5,
             scrub: true,
             scrollTrigger: {
                 trigger: ".the-end",

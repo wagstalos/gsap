@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Fira Sans", sans-serif;
+    font-family: "Creepster", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
 html {
@@ -23,14 +25,16 @@ header {
     place-content: center;
     height: 100vh;
 
+    .halloween,
     h1 {
+        font-family: "Creepster", system-ui;
         color: #fff;
         font-size: 7rem;
         text-transform: uppercase;
         opacity: 1;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         span {
-            color: #0ae448;
+            color: #f48611;
         }
     }
 
@@ -40,6 +44,16 @@ header {
         justify-content: end;
         font-weight: 200;
         opacity: 0;
+        font-size: 18px;
+
+        font-family: "Montserrat";
+    }
+
+    @media (max-width: 768px) {
+        .halloween {
+            font-size: 3rem;
+            text-align: center;
+        }
     }
 }
 
