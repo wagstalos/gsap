@@ -19,6 +19,11 @@ header {
     height: 100vh;
 }
 
+.s-main {
+    background-image: url("../img/bg-hallo.jpg");
+    background-size: cover;
+    background-position: 0;
+}
 .s-others {
     width: 100%;
     display: grid;
