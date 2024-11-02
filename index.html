@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+
+<body>
+    <!-- <div class="loading">
+        <div class="spinner"></div>
+    </div> -->
+
+    <main>
+        <section class="s-others s-main">
+            <div>
+                <h1 id="my-text">Animações <span>GSAP</span> </h1>
+                <h2 class="by-code">by: codeboost</h2>
+            </div>
+
+        </section>
+
+        <section class="s-nfts js-section-nft">
+            <div>
+                <img src="img/nft-01.png" class="nft-01" alt="nft">
+                <img src="img/nft-02.png" class="nft-02" alt="nft">
+                <img src="img/nft-03.png" class="nft-03" alt="nft">
+                <img src="img/nft-04.png" class="nft-04" alt="nft">
+            </div>
+        </section>
+
+        <section class="js-section-abobora" style="position: relative;">
+            <img src="img/abobora.png" class="abobora" alt="abobora" width="280px">
+        </section>
+
+        <section class="s-others the-end">
+            <h1>The end</h1>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+        const sectionNFT = document.querySelector('.js-section-nft')
+
+        const nft01 = document.querySelector('.nft-01');
+        const nft02 = document.querySelector('.nft-02');
+        const nft03 = document.querySelector('.nft-03');
+        const nft04 = document.querySelector('.nft-04');
+
+        function startAnimation(elem, xPosition) {
+            gsap.to(elem, {
+                x: xPosition,
+                duration: 2,
+                // ease: "bounce.out",
+                scrollTrigger: {
+                    trigger: sectionNFT,
+                    start: 'top center',
+                    end: 'bottom center',
+                    scrub: true,
+                    // markers: true
+                }
+            })
+        }
+
+        startAnimation(nft01, -420);
+        startAnimation(nft02, -125);
+        startAnimation(nft03, 125);
+        startAnimation(nft04, 420);
+
+        //tilte animation
+        const myText = new SplitType('#my-text')
+
+        gsap.to('.char', {
+            y: 0,
+            stagger: 0.05,
+            delay: 1,
+            duration: 0.3,
+            onComplete: function () {
+                gsap.to('.by-code', {
+                    opacity: 1,
+                });
+            },
+        })
+
+        //The animation
+        gsap.to('.the-end', {
+            scale: 2.5, 
+            scrub: true,
+            scrollTrigger: {
+                trigger: ".the-end",
+                start: 'top center',
+                end: 'bottom center',
+                scrub: true,
+                // markers: true
+            }
+        });
+
+        gsap.to('.abobora', {
+            rotation: 360,
+            transformOrigin: 'center center',
+            left: '40%',
+            duration: 2,
+            scrollTrigger: {
+                trigger: ".js-section-abobora",
+                start: 'top center',
+                end: 'bottom center',
+                pin: true,
+                scrub: true,
+            },
+        })
+
+
+    </script>
+
+</body>
+
+</html>
